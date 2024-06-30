@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coze Web Chat</title>
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        background-image: url("https://fauux.neocities.org/Static2.gif");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+      }
+      .custom-chat-button {
+        background-image: url("https://fauux.neocities.org/torment.gif");
+        background-size: cover;
+        width: 700px; /* Adjust the width as needed */
+        height: 700px; /* Adjust the height as needed */
+        border: none;
+        cursor: pointer;
+        background-color: transparent;
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .chat-container {
+        display: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <button
+      class="custom-chat-button"
+      type="button"
+      aria-disabled="false"
+    ></button>
+    <div class="chat-container">
+      <div
+        class="fe3173ed6eda3342aedf"
+        style="display: block; --coze-z-index-iframe: 1000"
+      >
+        <iframe
+          class="eb27e8d345a6df189413"
+          src="https://api.coze.com/open-platform/sdk/chatapp?params=%7B%22chatClientId%22%3A%22Uh9EIBeELKyl_H6rd7pC6%22%2C%22chatConfig%22%3A%7B%22bot_id%22%3A%227386133107587465222%22%2C%22user%22%3A%22MH78vxtDayhcq-cpbFIva%22%2C%22conversation_id%22%3A%22Nh3H5WZ0gRVL2miRUWcdD%22%7D%2C%22componentProps%22%3A%7B%22layout%22%3A%22pc%22%2C%22lang%22%3A%22en%22%2C%22uploadable%22%3Atrue%2C%22title%22%3A%22Coze%22%7D%7D"
+          style="display: block; width: 100%; height: 100%"
+        ></iframe>
+      </div>
+    </div>
+
+    <script src="https://sf-cdn.coze.com/obj/unpkg-va/flow-platform/chat-app-sdk/0.1.0-beta.4/libs/oversea/index.js"></script>
+    <script>
+      document
+        .querySelector(".custom-chat-button")
+        .addEventListener("click", function () {
+          document.querySelector(".chat-container").style.display = "block";
+          this.style.display = "none"; // Hide the button after clicking
+        });
+    </script>
+  </body>
+</html>
